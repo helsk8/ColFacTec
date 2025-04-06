@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inventario - ColFacTec</title>
+  <link rel="stylesheet" href="css/inventario.css" />
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="logo">ColFacTec</div>
+    <nav>
+      <ul>
+        <li><a href="./dashboard_admin.html">Inicio</a></li>
+        <li><a href="./usuariosregistrados.html">Usuarios</a></li>
+        <li><a href="./facturacion.html">Facturación</a></li>
+        <li><a href="./inventario.html">Productos</a></li>
+        <li><a href="./reportesadmin.html">Reportes</a></li>
+        <li><a href="./configuracion.html">Configuración</a></li>
+      </ul>
+    </nav>
+    <div class="logout">Cerrar sesión</div>
+  </aside>
+
+  <div class="main">
+    <h1>Inventario</h1>
+
+    <div class="tabs">
+      <button class="tab-button active" onclick="mostrarSeccion('productos')">Productos</button>
+      <button class="tab-button" onclick="mostrarSeccion('servicios')">Servicios</button>
+    </div>
+
+    <div id="productos" class="section active">
+      <div class="top-actions">
+        <h2>Productos</h2>
+        <button class="btn" onclick="abrirModal('Agregar Producto')">+ Agregar Producto</button>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Código</th>
+            <th>Producto</th>
+            <th>Categoría</th>
+            <th>Precio</th>
+            <th>Stock</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>PRD001</td>
+            <td>Monitor LED 24"</td>
+            <td>Electrónica</td>
+            <td>$550.000</td>
+            <td>12</td>
+            <td>
+              <button class="btn" onclick="abrirModal('Editar Producto', 'PRD001', 'Monitor LED 24', 'Electrónica', '550000', '12')">Editar</button>
+              <button class="btn" onclick="confirmarEliminacion()">Eliminar</button>
+            </td>
+          </tr>
+          <tr>
+            <td>PRD002</td>
+            <td>Silla Ergonómica</td>
+            <td>Mobiliario</td>
+            <td>$320.000</td>
+            <td>8</td>
+            <td>
+              <button class="btn" onclick="abrirModal('Editar Producto', 'PRD002', 'Silla Ergonómica', 'Mobiliario', '320000', '8')">Editar</button>
+              <button class="btn">Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div id="servicios" class="section">
+      <div class="top-actions">
+        <h2>Servicios</h2>
+        <button class="btn" onclick="abrirModal('Agregar Servicio')">+ Agregar Servicio</button>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Código</th>
+            <th>Servicio</th>
+            <th>Área</th>
+            <th>Precio</th>
+            <th>Disponibilidad</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>SVC001</td>
+            <td>Telemedicina</td>
+            <td>Consulta Remota</td>
+            <td>$40.000</td>
+            <td>Disponible</td>
+            <td>
+              <button class="btn" onclick="abrirModal('Editar Servicio', 'SVC001', 'Telemedicina', 'Consulta Remota', '40000', 'Disponible')">Editar</button>
+              <button class="btn" onclick="confirmarEliminacion()">Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Modal Genérico -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <h2 id="modal-title"></h2>
+      <input id="campoCodigo" placeholder="Código único" />
+      <input id="campoNombre" placeholder="Nombre" />
+      <input id="campoCategoria" placeholder="Categoría / Área" />
+      <input id="campoPrecio" placeholder="Precio" />
+      <input id="campoStock" placeholder="Stock / Disponibilidad" />
+      <div class="modal-actions">
+        <button onclick="cerrarModal()" class="btn">Cancelar</button>
+        <button class="btn" onclick="return validarFormulario()">Guardar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/inventario.js"></script>
+</body>
+</html>

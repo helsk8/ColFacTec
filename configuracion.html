@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Configuración - ColFacTec</title>
+  <!-- Enlace al archivo de estilos externo -->
+  <link rel="stylesheet" href="css/configuracion.css">
+</head>
+<body>
+
+<!-- Menú lateral de navegación -->
+<aside>
+  <div>
+    <div class="logo">ColFacTec</div>
+    <nav>
+      <ul>
+        <li><a href="./dashboard_admin.html">Inicio</a></li>
+        <li><a href="./usuariosregistrados.html">Usuarios</a></li>
+        <li><a href="./facturacion.html">Facturación</a></li>
+        <li><a href="./inventario.html">Productos</a></li>
+        <li><a href="./reportesadmin.html">Reportes</a></li>
+        <li><a href="./configuracion.html">Configuración</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="logout">Cerrar sesión</div>
+</aside>
+
+<!-- Contenido principal -->
+<div class="main">
+  <h1>Configuración del Sistema</h1>
+
+  <!-- Sección de Datos Generales -->
+  <details open>
+    <summary>📋 Datos Generales</summary>
+    <div class="row">
+      <div><label>Nombre del sistema</label><input type="text" placeholder="ColFacTec"></div>
+      <div><label>Razón Social</label><input type="text" placeholder="Empresa S.A.S."></div>
+      <div><label>NIT</label><input type="text" placeholder="900000000-1"></div>
+    </div>
+    <label style="margin-top: 15px;">Logo</label>
+    <input type="file">
+  </details>
+
+  <!-- Sección SMTP -->
+  <details>
+    <summary>📧 Correo y Servidor SMTP</summary>
+    <div class="row">
+      <div><label>Correo remitente</label><input type="email" placeholder="noreply@colfactec.com"></div>
+      <div><label>Servidor SMTP</label><input type="text" placeholder="smtp.gmail.com"></div>
+      <div><label>Puerto SMTP</label><input type="number" placeholder="587"></div>
+    </div>
+    <div class="row">
+      <div><label>Usuario SMTP</label><input type="text" placeholder="correo@dominio.com"></div>
+      <div><label>Contraseña SMTP</label><input type="password" placeholder="********"></div>
+      <div>
+        <label>Protocolo</label>
+        <select>
+          <option value="TLS">TLS</option>
+          <option value="SSL">SSL</option>
+          <option value="None">Ninguno</option>
+        </select>
+      </div>
+      <div>
+        <label>Activar notificaciones</label>
+        <select>
+          <option>Sí</option>
+          <option>No</option>
+        </select>
+      </div>
+    </div>
+  </details>
+
+  <!-- Seguridad -->
+  <details>
+    <summary>🔐 Usuarios y Seguridad</summary>
+    <div class="row">
+      <div><label>Expiración de sesión (min)</label><input type="number" value="30"></div>
+      <div><label>Autenticación 2FA</label>
+        <select>
+          <option>Activada</option>
+          <option>Desactivada</option>
+        </select>
+      </div>
+    </div>
+  </details>
+
+  <!-- Facturación -->
+  <details>
+    <summary>🧾 Configuración de Facturación</summary>
+    <div class="row">
+      <div><label>Prefijo Facturas</label><input type="text" placeholder="FV-"></div>
+      <div><label>Prefijo Notas Crédito</label><input type="text" placeholder="NC-"></div>
+      <div><label>Consecutivo actual</label><input type="number" placeholder="1001"></div>
+      <div><label>Firma electrónica</label>
+        <select>
+          <option>Activada</option>
+          <option>Desactivada</option>
+        </select>
+      </div>
+      <div><label>Fecha de vigencia DIAN</label><input type="date"></div>
+    </div>
+  </details>
+
+  <!-- Respaldo -->
+  <details>
+    <summary>💾 Respaldo y Exportación</summary>
+    <div class="row">
+      <div><label>Ruta de respaldo</label><input type="text" placeholder="/backups/"></div>
+      <div><label>Formato de exportación</label>
+        <select>
+          <option>PDF</option>
+          <option>Excel</option>
+          <option>JSON</option>
+        </select>
+      </div>
+    </div>
+    <button class="btn">Generar Backup</button>
+  </details>
+
+  <!-- Botón final -->
+  <button class="btn">Guardar configuración</button>
+</div>
+
+<!-- Archivo JS (por ahora sin funcionalidad dinámica) -->
+<script src="js/configuracion.js"></script>
+</body>
+</html>

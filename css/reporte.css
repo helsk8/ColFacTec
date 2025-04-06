@@ -1,0 +1,146 @@
+/* Variables globales de color para mantener coherencia visual */
+:root {
+    --color-primario: #1e76bc;
+    --color-secundario: #418dcc;
+    --color-oscuro: #38444b;
+    --color-gris: #9aa1a6;
+    --color-claro: #f4f7f7;
+  }
+  
+  /* Estilos base del cuerpo */
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    background-color: var(--color-claro);
+    color: var(--color-oscuro);
+  }
+  
+  /* Encabezado fijo con navegación */
+  header {
+    background-color: var(--color-oscuro);
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  nav a {
+    margin-left: 20px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  nav a:hover {
+    color: var(--color-secundario);
+  }
+  
+  /* Área principal del contenido */
+  main {
+    padding: 40px;
+  }
+  
+  h1 {
+    color: var(--color-primario);
+    margin-bottom: 30px;
+  }
+  
+  /* Filtros del reporte */
+  .filtros {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+  
+  input,
+  select {
+    padding: 10px;
+    border: 1px solid var(--color-gris);
+    border-radius: 6px;
+    width: 100%;
+  }
+  
+  /* Botones de acción */
+  .acciones {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+  }
+  
+  /* Tabla de resultados */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  table th,
+  table td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: left;
+  }
+  
+  table th {
+    background-color: var(--color-primario);
+    color: white;
+  }
+  
+  /* Botón reutilizable */
+  .btn {
+    background-color: var(--color-primario);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .btn:hover {
+    background-color: var(--color-secundario);
+  }
+  
+  /* Total facturado */
+  .total {
+    text-align: right;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+  
+  /* Modal de detalle */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .modal-content {
+    background-color: white;
+    margin: 10% auto;
+    padding: 20px;
+    width: 60%;
+    border-radius: 10px;
+  }
+  
+  .close {
+    float: right;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  

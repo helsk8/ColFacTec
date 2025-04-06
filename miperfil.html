@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ColFacTec - Usuario</title>
+  <!-- Archivo css externo -->
+  <link rel="stylesheet" href="css/miperfil.css">
+</head>
+<body>
+  <!-- Barra lateral de navegación fija a la izquierda -->
+  <div class="sidebar">
+    <h2>ColFacTec</h2>
+    <a href="./index.html">Inicio</a>
+    <a href="./facturar.html">Facturar</a>
+    <a href="./miperfil.html">Mi Perfil</a>
+    <a href="./estadisticas.html">Estadísticas</a>
+    <a href="./login.html" onclick="cerrarSesion()">Cerrar sesión</a>
+  </div>
+
+  <main>
+    <!-- Título de bienvenida para el usuario -->
+    <h1>Bienvenido, Usuario</h1>
+
+    <!-- Sección del perfil del usuario con foto y datos personales -->
+    <section class="perfil">
+      <h2>Mi Perfil</h2>
+      <div class="perfil-contenedor">
+        <img src="https://i.pravatar.cc/120" alt="Avatar" class="avatar">
+        <div class="datos">
+          <p><strong>Nombre:</strong> Juan Pérez</p>
+          <p><strong>Correo electrónico:</strong> juan.perez@colfactec.com</p>
+          <p><strong>Teléfono:</strong> +57 300 123 4567</p>
+          <p><strong>Rol:</strong> Usuario</p>
+          <p><strong>Estado de Cuenta:</strong> Activo</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer dentro del main -->
+    <div class="footer">
+      &copy; 2025 ColFacTec - Todos los derechos reservados.
+    </div>
+  </main>
+</body>
+</html>

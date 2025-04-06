@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- Configuración básica de la página -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ColFacTec - Registro de Usuario</title>
+
+  <!-- Enlace a la hoja de estilos específica para esta vista -->
+  <link rel="stylesheet" href="css/registro.css" />
+</head>
+<body>
+
+  <!-- Cabecera con logo y navegación -->
+  <header>
+    <div class="container">
+      <div class="logo">ColFacTec</div>
+      <nav>
+        <ul>
+          <!-- Enlaces a otras secciones del sistema -->
+          <li><a href="./index.html">Inicio</a></li>
+          <li><a href="./registro.html">Registro</a></li>
+          <li><a href="./login.html">Iniciar Sesión</a></li>
+          <li><a href="./dashboard.html">Dashboard</a></li>
+          <li><a href="./contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Sección principal del formulario de registro -->
+  <section class="registro">
+    <h2>Crear Cuenta</h2>
+
+    <!-- Formulario que captura los datos del usuario -->
+    <form id="formRegistro">
+      <!-- Campo para nombre completo -->
+      <div class="form-group">
+        <label for="nombre">Nombre completo</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Ej: Juan Pérez" required />
+      </div>
+
+      <!-- Campo para correo electrónico -->
+      <div class="form-group">
+        <label for="correo">Correo electrónico</label>
+        <input type="email" id="correo" name="correo" placeholder="Ej: usuario@correo.com" required />
+      </div>
+
+      <!-- Campo para la contraseña -->
+      <div class="form-group">
+        <label for="password">Contraseña</label>
+        <input type="password" id="password" name="password" placeholder="Mínimo 6 caracteres" required />
+      </div>
+
+      <!-- Confirmación de la contraseña -->
+      <div class="form-group">
+        <label for="confirmar">Confirmar contraseña</label>
+        <input type="password" id="confirmar" name="confirmar" placeholder="Repite tu contraseña" required />
+      </div>
+
+      <!-- Botón para enviar el formulario -->
+      <button type="submit" class="btn-registrarse">Registrarse</button>
+    </form>
+  </section>
+
+  <!-- Pie de página simple con derechos reservados -->
+  <footer>
+    <p>&copy; 2025 ColFacTec. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <!-- Carga un script que inicializa usuarios por defecto (por ejemplo, administrador) -->
+  <script src="js/inicializarUsuarios.js"></script>
+
+  <!-- Lógica principal del formulario de registro -->
+  <script src="js/registro.js"></script>
+
+</body>
+</html>

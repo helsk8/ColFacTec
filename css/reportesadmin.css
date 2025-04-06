@@ -1,0 +1,172 @@
+/* Estilos base y colores */
+:root {
+    --color-primario: #1e76bc;
+    --color-secundario: #418dcc;
+    --color-oscuro: #38444b;
+    --color-gris: #9aa1a6;
+    --color-claro: #f4f7f7;
+  }
+  
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--color-claro);
+    color: var(--color-oscuro);
+  }
+  
+  /* Menú lateral */
+  aside {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 250px;
+    background-color: var(--color-oscuro);
+    padding: 30px 20px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 40px;
+  }
+  
+  aside nav ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  aside nav ul li {
+    margin-bottom: 20px;
+  }
+  
+  aside nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  aside nav ul li a:hover {
+    color: var(--color-secundario);
+  }
+  
+  .logout {
+    font-size: 14px;
+    color: var(--color-gris);
+  }
+  
+  /* Contenido principal */
+  .main {
+    padding: 40px;
+    margin-left: 270px;
+  }
+  
+  /* Tabs */
+  .tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .tab-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--color-primario);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .tab-button.active {
+    background-color: var(--color-secundario);
+  }
+  
+  .section {
+    display: none;
+  }
+  
+  .section.active {
+    display: block;
+  }
+  
+  /* Filtros y acciones */
+  .top-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .filters input,
+  .filters select {
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+  
+  /* Tabla */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  }
+  
+  th, td {
+    padding: 12px 15px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: var(--color-primario);
+    color: white;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  /* Botones */
+  .btn {
+    background-color: var(--color-primario);
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .btn:hover {
+    background-color: var(--color-secundario);
+  }
+  
+  /* Modal */
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.4);
+    z-index: 1000;
+  }
+  
+  .modal-content {
+    background: white;
+    width: 400px;
+    margin: 100px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  }
+  

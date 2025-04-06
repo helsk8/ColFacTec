@@ -1,0 +1,88 @@
+/* Definición de variables de color base */
+:root {
+  --color-primario: #1e76bc;      
+  --color-secundario: #418dcc;    
+  --color-oscuro: #38444b;        
+  --color-gris: #9aa1a6;          
+  --color-claro: #f4f7f7;         
+}
+
+/* Estilos base del body */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--color-claro);
+  color: var(--color-oscuro);
+}
+
+/* Barra lateral fija a la izquierda */
+.sidebar {
+  position: fixed;
+  width: 220px;
+  height: 100vh;
+  background-color: var(--color-oscuro);
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Título/logo en la sidebar */
+.sidebar h2 {
+  color: white;
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+/* Enlaces del menú lateral */
+.sidebar a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+/* Color de hover para los enlaces */
+.sidebar a:hover {
+  color: var(--color-secundario);
+}
+
+/* Contenedor principal, desplazado para no tapar la sidebar */
+main {
+  margin-left: 240px;
+  padding: 40px;
+}
+
+/* Título de bienvenida */
+h1 {
+  color: var(--color-primario);
+  margin-bottom: 30px;
+}
+
+/* Contenedor de tarjetas: diseño responsive usando grid */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+/* Estilo base de cada tarjeta de información */
+.card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* sombra sutil */
+}
+
+/* Título dentro de la tarjeta */
+.card h3 {
+  margin-top: 0;
+  color: var(--color-primario);
+}
+
+/* Pie de página simple y claro */
+.footer {
+  margin-top: 40px;
+  text-align: center;
+  color: var(--color-gris);
+  font-size: 14px;
+}

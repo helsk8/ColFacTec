@@ -1,0 +1,126 @@
+
+:root {
+    --color-primario: #1e76bc;
+    --color-secundario: #418dcc;
+    --color-oscuro: #38444b;
+    --color-gris: #9aa1a6;
+    --color-claro: #f4f7f7;
+  }
+  
+  /* Estilo base del cuerpo del sitio */
+  body {
+    font-family: 'Segoe UI', sans-serif; /* Fuente moderna y legible */
+    background-color: var(--color-claro); /* Fondo suave */
+    margin: 0;
+    color: var(--color-oscuro); /* Texto oscuro para buena legibilidad */
+  }
+  
+  /* Cabecera con fondo oscuro y texto blanco */
+  header {
+    background-color: var(--color-oscuro);
+    color: white;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Logo en el header */
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  /* Enlaces del menú de navegación */
+  nav a {
+    margin-left: 20px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  /* Efecto hover para enlaces */
+  nav a:hover {
+    color: var(--color-secundario);
+  }
+  
+  /* Espaciado general del contenido principal */
+  main {
+    padding: 40px;
+  }
+  
+  /* Título principal */
+  h1 {
+    color: var(--color-primario);
+    margin-bottom: 30px;
+  }
+  
+  /* Estilos del formulario: diseño en columnas con separación */
+  form {
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08); /* Sombra suave */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  /* Elementos que deben ocupar todo el ancho del formulario */
+  .full-width {
+    grid-column: 1 / -1;
+  }
+  
+  /* Estilo básico para etiquetas de formulario */
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  /* Campos de entrada, menús y áreas de texto */
+  input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid var(--color-gris);
+  }
+  
+  /* Tabla de productos */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  /* Celdas de la tabla */
+  table th, table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  /* Encabezado de la tabla con color primario */
+  table th {
+    background-color: var(--color-primario);
+    color: white;
+  }
+  
+  /* Botón general (como el de agregar producto o generar factura) */
+  .btn {
+    background-color: var(--color-primario);
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+    grid-column: 1 / -1;
+    justify-self: start;
+  }
+  
+  /* Cambio de color cuando el mouse pasa sobre el botón */
+  .btn:hover {
+    background-color: var(--color-secundario);
+  }
+  

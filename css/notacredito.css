@@ -1,0 +1,117 @@
+/* Variables de color */
+:root {
+    --color-primario: #1e76bc;
+    --color-secundario: #418dcc;
+    --color-oscuro: #38444b;
+    --color-gris: #9aa1a6;
+    --color-claro: #f4f7f7;
+  }
+  
+  /* Estilos base */
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--color-claro);
+    margin: 0;
+    color: var(--color-oscuro);
+  }
+  
+  /* Encabezado */
+  header {
+    background-color: var(--color-oscuro);
+    color: white;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  nav a {
+    margin-left: 20px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  nav a:hover {
+    color: var(--color-secundario);
+  }
+  
+  /* Contenido principal */
+  main {
+    padding: 40px;
+  }
+  
+  h1 {
+    color: var(--color-primario);
+    margin-bottom: 30px;
+  }
+  
+  /* Estilo del formulario */
+  form {
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  .full-width {
+    grid-column: 1 / -1;
+  }
+  
+  /* Etiquetas y campos */
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid var(--color-gris);
+  }
+  
+  /* Tabla de productos */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  table th, table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  table th {
+    background-color: var(--color-primario);
+    color: white;
+  }
+  
+  /* Botones */
+  .btn {
+    background-color: var(--color-primario);
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+    grid-column: 1 / -1;
+    justify-self: start;
+  }
+  
+  .btn:hover {
+    background-color: var(--color-secundario);
+  }
+  

@@ -1,0 +1,131 @@
+/* Colores personalizados del sistema */
+:root {
+    --color-primario: #1e76bc;
+    --color-secundario: #418dcc;
+    --color-oscuro: #38444b;
+    --color-gris: #9aa1a6;
+    --color-claro: #f4f7f7;
+  }
+  
+  /* Reset y configuración base */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--color-claro);
+    color: var(--color-oscuro);
+    display: flex;
+    min-height: 100vh;
+  }
+  
+  /* Sidebar lateral */
+  .sidebar {
+    background-color: var(--color-oscuro);
+    width: 250px;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .sidebar .logo {
+    color: var(--color-claro);
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 40px;
+  }
+  
+  .sidebar nav ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar nav ul li {
+    margin: 20px 0;
+  }
+  
+  .sidebar nav ul li a {
+    color: var(--color-claro);
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
+  }
+  
+  .sidebar nav ul li a:hover {
+    color: var(--color-secundario);
+  }
+  
+  .sidebar .logout {
+    margin-top: auto;
+    color: var(--color-gris);
+    font-size: 14px;
+  }
+  
+  /* Contenido del panel */
+  .main {
+    flex: 1;
+    padding: 40px;
+  }
+  
+  .main h1 {
+    color: var(--color-primario);
+    margin-bottom: 30px;
+  }
+  
+  /* Tarjetas del dashboard */
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+  
+  .card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    width: 250px;
+    transition: transform 0.3s;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .card h3 {
+    color: var(--color-oscuro);
+    margin-bottom: 10px;
+  }
+  
+  .card p {
+    color: #555;
+    font-size: 14px;
+  }
+  
+  /* Adaptación a pantallas pequeñas */
+  @media (max-width: 768px) {
+    body {
+      flex-direction: column;
+    }
+  
+    .sidebar {
+      width: 100%;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+  
+    .main {
+      padding: 20px;
+    }
+  
+    .cards {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  

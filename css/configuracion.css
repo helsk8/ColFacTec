@@ -1,0 +1,138 @@
+/* Variables de color */
+:root {
+    --color-primario: #1e76bc;
+    --color-secundario: #418dcc;
+    --color-oscuro: #38444b;
+    --color-gris: #9aa1a6;
+    --color-claro: #f4f7f7;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: var(--color-claro);
+    color: var(--color-oscuro);
+    display: flex;
+  }
+  
+  /* Menú lateral */
+  aside {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 250px;
+    background-color: var(--color-oscuro);
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: white;
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 40px;
+  }
+  
+  aside nav ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  aside nav ul li {
+    margin-bottom: 20px;
+  }
+  
+  aside nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  aside nav ul li a:hover {
+    color: var(--color-secundario);
+  }
+  
+  .logout {
+    font-size: 14px;
+    color: var(--color-gris);
+  }
+  
+  /* Contenido principal */
+  .main {
+    margin-left: 270px;
+    padding: 40px;
+    width: 100%;
+  }
+  
+  h1 {
+    color: var(--color-primario);
+    margin-bottom: 20px;
+  }
+  
+  /* Secciones desplegables */
+  details {
+    background: white;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.05);
+  }
+  
+  summary {
+    font-weight: bold;
+    font-size: 18px;
+    color: var(--color-primario);
+    cursor: pointer;
+    margin-bottom: 15px;
+  }
+  
+  /* Campos de formulario */
+  label {
+    display: block;
+    margin-top: 10px;
+    font-weight: 500;
+  }
+  
+  input, select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--color-gris);
+    border-radius: 6px;
+    margin-top: 5px;
+  }
+  
+  /* Botón */
+  .btn {
+    background-color: var(--color-primario);
+    color: white;
+    padding: 12px 20px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  .btn:hover {
+    background-color: var(--color-secundario);
+  }
+  
+  /* Organización de inputs por fila */
+  .row {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .row > div {
+    flex: 1;
+    min-width: 250px;
+  }
+  

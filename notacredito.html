@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nota Crédito - ColFacTec</title>
+  <!-- Vinculamos la hoja de estilos externa -->
+  <link rel="stylesheet" href="css/notacredito.css" />
+</head>
+<body>
+
+  <!-- Encabezado con navegación -->
+  <header>
+    <div class="logo">ColFacTec</div>
+    <nav>
+      <a href="./index.html">Inicio</a>
+      <a href="./registro.html">Registro</a>
+      <a href="./login.html">Iniciar Sesión</a>
+      <a href="./dashboard_admin.html">Dashboard</a>
+      <a href="./contacto.html">Contacto</a>
+    </nav>
+  </header>
+
+  <!-- Contenido principal -->
+  <main>
+    <h1>Generar Nota Crédito</h1>
+
+    <!-- Formulario de la Nota Crédito -->
+    <form oninput="calcularTotalNota()">
+
+      <!-- Campos de cabecera -->
+      <div>
+        <label>Consecutivo Nota Crédito</label>
+        <input type="text" id="consecutivoNota" readonly />
+      </div>
+
+      <div>
+        <label>Número de Factura a Afectar</label>
+        <input type="text" id="facturaId" placeholder="Ej: FV-123456" onchange="cargarFactura()" />
+      </div>
+
+      <div>
+        <label>Cliente</label>
+        <input type="text" id="clienteNombre" readonly />
+      </div>
+
+      <div>
+        <label>Email</label>
+        <input type="text" id="clienteEmail" readonly />
+      </div>
+
+      <div>
+        <label>Motivo de la Nota Crédito</label>
+        <select>
+          <option value="valor_incorrecto">Valor incorrecto</option>
+          <option value="producto_devuelto">Producto devuelto</option>
+          <option value="descuento_no_aplicado">Descuento no aplicado</option>
+        </select>
+      </div>
+
+      <!-- Observaciones -->
+      <div class="full-width">
+        <label>Observaciones</label>
+        <textarea placeholder="Describa el motivo detalladamente..."></textarea>
+      </div>
+
+      <!-- Tabla de productos afectados -->
+      <div class="full-width">
+        <h3>Productos Afectados</h3>
+        <table id="tabla-nota">
+          <thead>
+            <tr>
+              <th>Código</th>
+              <th>Nombre</th>
+              <th>Cantidad</th>
+              <th>Precio Unitario</th>
+              <th>Subtotal</th>
+              <th>Acción</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+        <button type="button" class="btn" onclick="agregarFila()">+ Agregar Producto</button>
+      </div>
+
+      <!-- Campo de valor total -->
+      <div>
+        <label>Valor en letras</label>
+        <input type="text" id="valorLetras" readonly />
+      </div>
+
+      <!-- Botón de envío -->
+      <button class="btn" type="submit">Emitir Nota Crédito</button>
+    </form>
+  </main>
+
+  <!-- Script de lógica -->
+  <script src="js/notacredito.js"></script>
+</body>
+</html>

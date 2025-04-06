@@ -1,0 +1,105 @@
+/* === Colores base del sistema === */
+:root {
+    --color-primario: #1e76bc;
+    --color-secundario: #418dcc;
+    --color-oscuro: #38444b;
+    --color-gris: #9aa1a6;
+    --color-claro: #f4f7f7;
+  }
+  
+  /* Reset y fuente general */
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--color-claro);
+    color: var(--color-oscuro);
+  }
+  
+  /* Barra lateral fija */
+  .sidebar {
+    position: fixed;
+    width: 220px;
+    height: 100vh;
+    background-color: var(--color-oscuro);
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .sidebar h2 {
+    color: white;
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
+  
+  .sidebar a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    margin-bottom: 15px;
+    font-weight: bold;
+  }
+  
+  .sidebar a:hover {
+    color: var(--color-secundario);
+  }
+  
+  /* Área principal donde se carga el contenido */
+  main {
+    margin-left: 240px; /* Espacio para dejar la barra lateral */
+    padding: 40px;
+  }
+  
+  /* Encabezado de la vista */
+  h1 {
+    color: var(--color-primario);
+    margin-bottom: 30px;
+  }
+  
+  /* Tarjetas resumen */
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+  }
+  
+  .card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  
+  .card h3 {
+    margin-top: 0;
+    color: var(--color-primario);
+  }
+  
+  /* Pie de página */
+  .footer {
+    margin-top: 40px;
+    text-align: center;
+    color: var(--color-gris);
+    font-size: 14px;
+  }
+  
+  /* Contenedor de gráficas */
+  .graficas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  /* Tarjeta individual para cada gráfica */
+  .grafica-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+  
+  /* Límite para que los gráficos no se desborden */
+  canvas {
+    max-width: 100%;
+    height: auto;
+  }
+  

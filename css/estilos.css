@@ -1,0 +1,148 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f4f7f7;
+    color: #38444b;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+  }
+  
+  /* Header */
+  .header {
+    background-color: #38444b;
+    padding: 20px 0;
+  }
+  
+  .logo {
+    color: #f4f7f7;
+    font-size: 24px;
+    font-weight: bold;
+    float: left;
+  }
+  
+  .nav ul {
+    list-style: none;
+    float: right;
+  }
+  
+  .nav ul li {
+    display: inline-block;
+    margin-left: 20px;
+  }
+  
+  .nav ul li a {
+    color: #f4f7f7;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .nav ul li a:hover {
+    color: #418dcc;
+  }
+  
+  /* Banner */
+  .banner {
+    background-color: #1e76bc;
+    color: #fff;
+    text-align: center;
+    padding: 100px 20px;
+  }
+  
+  .banner h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+  }
+  
+  .banner p {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  
+  .boton {
+    background-color: #f4f7f7;
+    color: #1e76bc;
+    padding: 12px 25px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: 0.3s;
+  }
+  
+  .boton:hover {
+    background-color: #9aa1a6;
+    color: #fff;
+  }
+  
+  /* Módulos */
+  .modulos {
+    padding: 60px 20px;
+    text-align: center;
+  }
+  
+  .modulos h2 {
+    color: #1e76bc;
+    margin-bottom: 40px;
+  }
+  
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+  }
+  
+  .card {
+    background-color: #fff;
+    border: 1px solid #9aa1a6;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    padding: 30px;
+    width: 300px;
+    transition: transform 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-10px);
+  }
+  
+  .card h3 {
+    color: #38444b;
+    margin-bottom: 10px;
+  }
+  
+  .card p {
+    color: #555;
+  }
+  
+  /* Footer */
+  .footer {
+    background-color: #38444b;
+    color: #f4f7f7;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 50px;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .nav ul {
+      float: none;
+      text-align: center;
+      padding-top: 10px;
+    }
+  
+    .nav ul li {
+      display: block;
+      margin: 10px 0;
+    }
+  
+    .cards {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generar Factura - ColFacTec</title>
+  <link rel="stylesheet" href="css/facturar.css">
+</head>
+<body>
+  <header>
+    <div class="logo">ColFacTec</div>
+    <nav>
+      <a href="./dashboard_usuario.html">Inicio</a>
+      <a href="./registro.html">Registro</a>
+      <a href="./login.html">Iniciar Sesión</a>
+      <a href="./dashboard_usuario.html">Dashboard</a>
+      <a href="./contacto.html">Contacto</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Generar Factura Electrónica</h1>
+    <form id="form-factura">
+      <div>
+        <label>Fecha de Emisión</label>
+        <input type="date" id="fechaEmision">
+      </div>
+      <div>
+        <label>Forma de Pago</label>
+        <select id="formaPago">
+          <option value="Contado">Contado</option>
+          <option value="Credito">Crédito</option>
+        </select>
+      </div>
+      <div>
+        <label>Fecha de Vencimiento</label>
+        <input type="date" id="fechaVencimiento">
+      </div>
+      <div>
+        <label>Tipo de Documento</label>
+        <select id="tipoDocumento">
+          <option value="NIT">NIT</option>
+          <option value="Cedula">Cédula</option>
+        </select>
+      </div>
+      <div>
+        <label>Número de Identificación</label>
+        <input type="text" id="identificacion">
+      </div>
+      <div>
+        <label>Razón Social</label>
+        <input type="text" id="razonSocial">
+      </div>
+      <div>
+        <label>Dirección</label>
+        <input type="text" id="direccion">
+      </div>
+      <div>
+        <label>Email</label>
+        <input type="email" id="email">
+      </div>
+      <div>
+        <label>Teléfono</label>
+        <input type="text" id="telefono">
+      </div>
+      <div class="full-width">
+        <label>Observaciones</label>
+        <textarea id="observaciones"></textarea>
+      </div>
+
+      <div class="full-width">
+        <h3>Productos</h3>
+        <table id="tabla-productos">
+          <thead>
+            <tr>
+              <th>Código</th>
+              <th>Nombre</th>
+              <th>Cantidad</th>
+              <th>Precio Unitario</th>
+              <th>Descuento</th>
+              <th>IVA</th>
+              <th>Subtotal</th>
+              <th>Acción</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+        <button type="button" class="btn" onclick="agregarFila()">+ Agregar Producto</button>
+      </div>
+
+      <div>
+        <label>Subtotal</label>
+        <input type="text" id="subtotalGlobal" readonly>
+      </div>
+      <div>
+        <label>IVA</label>
+        <input type="text" id="ivaGlobal" readonly>
+      </div>
+      <div>
+        <label>Total</label>
+        <input type="text" id="totalGlobal" readonly>
+      </div>
+      <div class="full-width">
+        <label>Valor en letras</label>
+        <input type="text" id="valorEnLetras" readonly>
+      </div>
+
+      <button type="submit" class="btn">Generar Factura</button>
+    </form>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script src="js/facturar.js"></script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Facturación - ColFacTec</title>
+  <link rel="stylesheet" href="css/facturacion.css" />
+</head>
+<body>
+
+  <!-- Panel lateral izquierdo -->
+  <aside class="sidebar">
+    <div>
+      <div class="logo">ColFacTec</div>
+      <nav>
+        <ul>
+          <li><a href="#">Inicio</a></li>
+          <li><a href="#">Usuarios</a></li>
+          <li><a href="#">Facturación</a></li>
+          <li><a href="#">Productos</a></li>
+          <li><a href="#">Reportes</a></li>
+          <li><a href="#">Configuración</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="logout">
+      <p>Cerrar sesión</p>
+    </div>
+  </aside>
+
+  <!-- Sección principal -->
+  <main class="main">
+    <h1>Facturación DIAN</h1>
+
+    <!-- Botón para simular creación de factura -->
+    <button onclick="facturarMockup()" class="btn-facturar">+ Facturar</button>
+
+    <!-- Tabla con facturas emitidas -->
+    <table>
+      <thead>
+        <tr>
+          <th>Consecutivo</th>
+          <th>Cliente</th>
+          <th>Fecha</th>
+          <th>Valor</th>
+          <th>Estado DIAN</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>FV-000123</td>
+          <td>Ana Martínez</td>
+          <td>2025-04-03</td>
+          <td>$440.000</td>
+          <td><span class="estado enviado">Enviado</span></td>
+          <td class="actions">
+            <button>Ver Detalle</button>
+            <button>Reenviar</button>
+          </td>
+        </tr>
+        <tr>
+          <td>FV-000124</td>
+          <td>Juan Pérez</td>
+          <td>2025-04-04</td>
+          <td>$220.000</td>
+          <td><span class="estado rechazado">Rechazado</span></td>
+          <td class="actions">
+            <button>Ver Detalle</button>
+            <button>Reenviar</button>
+          </td>
+        </tr>
+        <tr>
+          <td>FV-000125</td>
+          <td>Lucía Gómez</td>
+          <td>2025-04-05</td>
+          <td>$390.000</td>
+          <td><span class="estado pendiente">Pendiente</span></td>
+          <td class="actions">
+            <button>Ver Detalle</button>
+            <button>Reenviar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Modal para mostrar detalles de la factura -->
+    <div id="modalDetalle" class="modal">
+      <div class="modal-content">
+        <h2>Detalle de Factura</h2>
+        <div id="contenidoDetalle">
+          <!-- Aquí se cargan los detalles con JS -->
+        </div>
+        <div class="modal-footer">
+          <button onclick="cerrarDetalle()">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/facturacion.js"></script>
+</body>
+</html>

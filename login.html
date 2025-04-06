@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- Metadatos básicos para el navegador -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ColFacTec - Iniciar Sesión</title>
+
+  <!-- Enlace a la hoja de estilos específica de esta vista -->
+  <link rel="stylesheet" href="css/login.css" />
+</head>
+<body>
+
+  <!-- Encabezado con menú de navegación -->
+  <header>
+    <div class="container">
+      <!-- Logo de la plataforma -->
+      <div class="logo">ColFacTec</div>
+
+      <!-- Navegación principal con enlaces internos -->
+      <nav>
+        <ul>
+          <li><a href="./index.html">Inicio</a></li>
+          <li><a href="./registro.html">Registro</a></li>
+          <li><a href="./login.html">Iniciar Sesión</a></li>
+          <li><a href="./dashboard_admin.html">Dashboard</a></li>
+          <li><a href="./contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Sección principal: formulario de inicio de sesión -->
+  <section class="login">
+    <h2>Iniciar Sesión</h2>
+
+    <!-- Formulario con validación HTML básica y controlado por JS -->
+    <form id="formLogin">
+      <div class="form-group">
+        <label for="correo">Correo electrónico</label>
+        <input type="email" id="correo" name="correo" required />
+      </div>
+      <div class="form-group">
+        <label for="password">Contraseña</label>
+        <input type="password" id="password" name="password" required />
+      </div>
+
+      <!-- Botón principal de envío -->
+      <button type="submit" class="btn-login">Acceder</button>
+
+      <!-- Mensaje para usuarios nuevos con enlace al registro -->
+      <div class="extra">
+        <p>¿No tienes cuenta? <a href="registro.html">Regístrate aquí</a></p>
+      </div>
+    </form>
+  </section>
+
+  <!-- Pie de página simple y elegante -->
+  <footer>
+    <p>&copy; 2025 ColFacTec. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- Script que maneja la lógica de inicio de sesión -->
+  <script src="js/login.js"></script>
+</body>
+</html>

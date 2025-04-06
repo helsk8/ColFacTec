@@ -1,0 +1,150 @@
+/* Paleta de colores base */
+:root {
+  --color-primario: #1e76bc;       
+  --color-secundario: #418dcc;   
+  --color-oscuro: #38444b;         
+  --color-gris: #9aa1a6;           
+  --color-claro: #f4f7f7;          
+}
+
+/* Reset de márgenes y caja */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilos globales para el cuerpo de la página */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--color-claro);
+  color: var(--color-oscuro);
+}
+
+/* Cabecera con fondo oscuro y espaciado interno */
+header {
+  background-color: var(--color-oscuro);
+  padding: 20px 0;
+}
+
+/* Contenedor que centra el contenido y define su ancho */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Estilo del logo de ColFacTec */
+.logo {
+  color: var(--color-claro);
+  font-size: 28px;
+  font-weight: bold;
+}
+
+/* Menú de navegación horizontal */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+/* Enlaces del menú de navegación */
+nav ul li a {
+  color: var(--color-claro);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+/* Efecto al pasar el mouse sobre los enlaces */
+nav ul li a:hover {
+  color: var(--color-secundario);
+}
+
+/* Estilos del formulario de login */
+.login {
+  max-width: 400px;
+  margin: 60px auto;
+  padding: 40px;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+/* Título principal del formulario */
+.login h2 {
+  text-align: center;
+  color: var(--color-primario);
+  margin-bottom: 30px;
+}
+
+/* Espacio entre los campos del formulario */
+.form-group {
+  margin-bottom: 20px;
+}
+
+/* Estilos para las etiquetas de los campos */
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+/* Estilos para los campos de entrada */
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--color-gris);
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+/* Efecto visual cuando el campo está enfocado */
+input:focus {
+  border-color: var(--color-primario);
+}
+
+/* Botón de inicio de sesión */
+.btn-login {
+  width: 100%;
+  background-color: var(--color-primario);
+  color: white;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Efecto al pasar el mouse sobre el botón */
+.btn-login:hover {
+  background-color: var(--color-secundario);
+}
+
+/* Texto adicional debajo del botón */
+.extra {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+/* Enlace del texto adicional */
+.extra a {
+  color: var(--color-primario);
+  text-decoration: none;
+}
+
+/* Pie de página */
+footer {
+  background-color: var(--color-oscuro);
+  color: var(--color-claro);
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 60px;
+}

@@ -1,0 +1,224 @@
+/* Variables globales para colores*/
+:root {
+  --color-primario: #1e76bc;
+  --color-secundario: #418dcc;
+  --color-oscuro: #38444b;
+  --color-gris: #9aa1a6;
+  --color-claro: #f4f7f7;
+}
+
+/* Estilos base para todo el sitio.*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilo del cuerpo general del sitio */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--color-claro);
+  color: var(--color-oscuro);
+}
+
+/* Cabecera principal con fondo oscuro */
+header {
+  background-color: var(--color-oscuro);
+  padding: 20px 0;
+}
+
+/* Contenedor central para alinear contenido dentro de header */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo en la esquina superior izquierda */
+.logo {
+  color: var(--color-claro);
+  font-size: 28px;
+  font-weight: bold;
+}
+
+/* Menú de navegación horizontal */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li a {
+  color: var(--color-claro);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+/* Cambio de color al pasar el mouse sobre los enlaces del menú */
+nav ul li a:hover {
+  color: var(--color-secundario);
+}
+
+/* Banner de bienvenida, con fondo degradado y contenido centrado */
+.banner {
+  background: linear-gradient(to right, var(--color-primario), var(--color-secundario));
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.banner h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+
+.banner p {
+  font-size: 1.2em;
+  max-width: 700px;
+  margin: 0 auto 30px;
+}
+
+/* Botón principal del banner */
+.btn-banner {
+  background-color: var(--color-claro);
+  color: var(--color-primario);
+  padding: 12px 30px;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+/* Efecto al pasar el mouse sobre el botón */
+.btn-banner:hover {
+  background-color: var(--color-gris);
+  color: white;
+}
+
+/* Sección de módulos del sistema */
+.modulos {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.modulos h2 {
+  font-size: 2.5em;
+  color: var(--color-primario);
+  margin-bottom: 40px;
+}
+
+/* Contenedor de tarjetas de los módulos */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+/* Tarjeta individual de cada módulo */
+.card {
+  background-color: white;
+  border: 1px solid var(--color-gris);
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  padding: 30px;
+  width: 300px;
+  transition: transform 0.3s;
+}
+
+/* Efecto visual cuando pasas el mouse sobre la tarjeta */
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card h3 {
+  margin-bottom: 10px;
+  color: var(--color-oscuro);
+}
+
+.card p {
+  color: #555;
+}
+
+/* Pie de página */
+footer {
+  background-color: var(--color-oscuro);
+  color: var(--color-claro);
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 50px;
+}
+
+/* Sección de testimonios de clientes */
+.testimonios {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.testimonios h2 {
+  font-size: 2.2em;
+  color: var(--color-primario);
+  margin-bottom: 30px;
+}
+
+/* Contenedor flexible para organizar los testimonios en tarjetas */
+.testimonios-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.testimonio {
+  background: white;
+  border: 1px solid var(--color-gris);
+  border-radius: 15px;
+  padding: 20px;
+  width: 280px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  text-align: center;
+}
+
+.testimonio img {
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.testimonio h4 {
+  margin: 10px 0 5px;
+  color: var(--color-oscuro);
+}
+
+.testimonio span {
+  font-size: 0.9em;
+  color: var(--color-gris);
+}
+
+/* Ajustes responsivos para pantallas pequeñas */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 10px;
+  }
+
+  .banner h1 {
+    font-size: 2em;
+  }
+
+  .card-container,
+  .testimonios-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}

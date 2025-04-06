@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- Configuración básica de codificación y adaptación a dispositivos -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ColFacTec - Usuario</title>
+
+  <!-- Enlace a la hoja de estilos específica del dashboard del usuario -->
+  <link rel="stylesheet" href="css/dashboard_usuario.css">
+</head>
+<body>
+
+  <!-- Menú lateral con accesos directos para navegar por el sistema -->
+  <div class="sidebar">
+    <h2>ColFacTec</h2>
+    <a href="./index.html">Inicio</a>
+    <a href="./facturar.html">Facturar</a>
+    <a href="./miperfil.html">Mi Perfil</a>
+    <a href="./estadisticas.html">Estadísticas</a>
+    <a href="./login.html" onclick="cerrarSesion()">Cerrar sesión</a>
+  </div>
+
+  <!-- Contenedor principal de la información del dashboard -->
+  <main>
+    <!-- Saludo personalizado que se completa dinámicamente con JS -->
+    <h1 id="bienvenida">Bienvenido, Usuario</h1>
+
+    <!-- Sección de tarjetas con información clave para el usuario -->
+    <div class="cards">
+      <div class="card">
+        <h3>Mis Facturas</h3>
+        <!-- Total de facturas generadas por el usuario -->
+        <p id="cantidadFacturas">0 documentos generados</p>
+      </div>
+      <div class="card">
+        <h3>Notas Crédito</h3>
+        <!-- Total de notas crédito emitidas sobre sus facturas -->
+        <p id="cantidadNotas">0 documentos registrados</p>
+      </div>
+      <div class="card">
+        <h3>Última Factura</h3>
+        <!-- Información de la última factura generada -->
+        <p id="ultimaFactura">-</p>
+      </div>
+      <div class="card">
+        <h3>Estado de Cuenta</h3>
+        <!-- Monto pendiente por pagar -->
+        <p id="estadoCuenta">$0 pendiente</p>
+      </div>
+    </div>
+
+    <!-- Pie de página con derechos de autor -->
+    <div class="footer">
+      &copy; 2025 ColFacTec - Todos los derechos reservados.
+    </div>
+  </main>
+
+  <!-- Librería externa para generar PDFs si se requiere mostrar documentos -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+  <!-- Script principal del dashboard, se encarga de mostrar los datos reales del usuario -->
+  <script src="js/dashboard_usuario.js"></script>
+</body>
+</html>

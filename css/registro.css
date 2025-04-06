@@ -1,0 +1,135 @@
+:root {
+    --color-primario: #1e76bc;
+    --color-secundario: #418dcc;
+    --color-oscuro: #38444b;
+    --color-gris: #9aa1a6;
+    --color-claro: #f4f7f7;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--color-claro);
+    color: var(--color-oscuro);
+  }
+  
+  header {
+    background-color: var(--color-oscuro);
+    padding: 20px 0;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    color: var(--color-claro);
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  nav ul li a {
+    color: var(--color-claro);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+  
+  nav ul li a:hover {
+    color: var(--color-secundario);
+  }
+  
+  .registro {
+    max-width: 500px;
+    margin: 60px auto;
+    padding: 40px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  }
+  
+  .registro h2 {
+    text-align: center;
+    color: var(--color-primario);
+    margin-bottom: 30px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--color-oscuro);
+    font-weight: 500;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--color-gris);
+    border-radius: 8px;
+    font-size: 16px;
+  }
+  
+  input:focus {
+    outline: none;
+    border-color: var(--color-primario);
+  }
+  
+  .btn-registrarse {
+    width: 100%;
+    background-color: var(--color-primario);
+    color: white;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .btn-registrarse:hover {
+    background-color: var(--color-secundario);
+  }
+  
+  footer {
+    background-color: var(--color-oscuro);
+    color: var(--color-claro);
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 60px;
+  }
+  
+  @media (max-width: 600px) {
+    .container {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    nav ul {
+      flex-direction: column;
+      margin-top: 10px;
+    }
+  }
+  

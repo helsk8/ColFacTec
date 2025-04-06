@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reportes - ColFacTec</title>
+  <link rel="stylesheet" href="css/reportesadmin.css" />
+</head>
+<body>
+  <!-- Menú lateral fijo -->
+  <aside>
+    <div>
+      <div class="logo">ColFacTec</div>
+      <nav>
+        <ul>
+        <li><a href="./dashboard_admin.html">Inicio</a></li>
+        <li><a href="./usuariosregistrados.html">Usuarios</a></li>
+        <li><a href="./facturacion.html">Facturación</a></li>
+        <li><a href="./inventario.html">Productos</a></li>
+        <li><a href="./reportesadmin.html">Reportes</a></li>
+        <li><a href="./configuracion.html">Configuración</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="logout">Cerrar sesión</div>
+  </aside>
+
+  <!-- Contenido principal -->
+  <div class="main">
+    <h1>Reportes</h1>
+
+    <!-- Botones de pestaña -->
+    <div class="tabs">
+      <button class="tab-button active" onclick="mostrarSeccion('facturas')">Facturas</button>
+      <button class="tab-button" onclick="mostrarSeccion('notas')">Notas Crédito</button>
+    </div>
+
+    <!-- Sección Facturas -->
+    <div id="facturas" class="section active">
+      <div class="top-actions">
+        <h2>Facturas</h2>
+        <div class="filters">
+          <input type="text" placeholder="Buscar cliente...">
+          <input type="date" placeholder="Fecha inicio">
+          <input type="date" placeholder="Fecha fin">
+          <select>
+            <option value="">Estado</option>
+            <option>Enviado</option>
+            <option>Pendiente</option>
+            <option>Cancelado</option>
+          </select>
+        </div>
+        <div>
+          <button class="btn" onclick="window.print()">Exportar PDF</button>
+          <button class="btn" onclick="exportarExcel('tablaFacturas')">Exportar Excel</button>
+        </div>
+      </div>
+      <table id="tablaFacturas">
+        <thead>
+          <tr>
+            <th>Consecutivo</th>
+            <th>Cliente</th>
+            <th>Fecha</th>
+            <th>Valor</th>
+            <th>Usuario</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Registros de ejemplo -->
+          <tr>
+            <td>FV-1001</td>
+            <td>Ana Martínez</td>
+            <td>2025-04-01</td>
+            <td>$320.000</td>
+            <td>usuario1@colfactec.com</td>
+            <td>Enviado</td>
+            <td><button class="btn" onclick="mostrarDetalle('FV-1001','Ana Martínez','2025-04-01','$320.000','usuario1@colfactec.com','Enviado')">Detalle</button></td>
+          </tr>
+          <tr>
+            <td>FV-1002</td>
+            <td>Carlos Ruiz</td>
+            <td>2025-04-03</td>
+            <td>$590.000</td>
+            <td>usuario2@colfactec.com</td>
+            <td>Pendiente</td>
+            <td><button class="btn" onclick="mostrarDetalle('FV-1002','Carlos Ruiz','2025-04-03','$590.000','usuario2@colfactec.com','Pendiente')">Detalle</button></td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="3"><strong>Total</strong></td>
+            <td colspan="4">$910.000</td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+
+    <!-- Sección Notas Crédito -->
+    <div id="notas" class="section">
+      <div class="top-actions">
+        <h2>Notas Crédito</h2>
+        <div class="filters">
+          <input type="text" placeholder="Buscar cliente...">
+          <input type="date" placeholder="Fecha inicio">
+          <input type="date" placeholder="Fecha fin">
+          <input type="text" placeholder="Motivo">
+        </div>
+        <div>
+          <button class="btn" onclick="window.print()">Exportar PDF</button>
+          <button class="btn" onclick="exportarExcel('tablaNotas')">Exportar Excel</button>
+        </div>
+      </div>
+      <table id="tablaNotas">
+        <thead>
+          <tr>
+            <th>Consecutivo</th>
+            <th>Cliente</th>
+            <th>Fecha</th>
+            <th>Valor</th>
+            <th>Usuario</th>
+            <th>Motivo</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>NC-2001</td>
+            <td>Juan Pérez</td>
+            <td>2025-04-02</td>
+            <td>$120.000</td>
+            <td>usuario3@colfactec.com</td>
+            <td>Devolución parcial</td>
+            <td><button class="btn" onclick="mostrarDetalle('NC-2001','Juan Pérez','2025-04-02','$120.000','usuario3@colfactec.com','Devolución parcial')">Detalle</button></td>
+          </tr>
+          <tr>
+            <td>NC-2002</td>
+            <td>Luis Moreno</td>
+            <td>2025-04-05</td>
+            <td>$250.000</td>
+            <td>usuario4@colfactec.com</td>
+            <td>Producto defectuoso</td>
+            <td><button class="btn" onclick="mostrarDetalle('NC-2002','Luis Moreno','2025-04-05','$250.000','usuario4@colfactec.com','Producto defectuoso')">Detalle</button></td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="3"><strong>Total</strong></td>
+            <td colspan="4">$370.000</td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+
+  <!-- Modal para mostrar detalle -->
+  <div id="modalDetalle" class="modal">
+    <div class="modal-content">
+      <h2>Detalle del Documento</h2>
+      <p><strong>Consecutivo:</strong> <span id="dConsecutivo"></span></p>
+      <p><strong>Cliente:</strong> <span id="dCliente"></span></p>
+      <p><strong>Fecha:</strong> <span id="dFecha"></span></p>
+      <p><strong>Valor:</strong> <span id="dValor"></span></p>
+      <p><strong>Usuario:</strong> <span id="dUsuario"></span></p>
+      <p><strong>Estado / Motivo:</strong> <span id="dEstado"></span></p>
+      <div style="text-align:right;">
+        <button class="btn" onclick="document.getElementById('modalDetalle').style.display='none'">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="css/reportesadmin.js"></script>
+</body>
+</html>

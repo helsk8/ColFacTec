@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Reportes - ColFacTec</title>
+  <link rel="stylesheet" href="css/reporte.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+  <header>
+    <div class="logo">ColFacTec</div>
+    <nav>
+      <a href="#">Inicio</a>
+      <a href="#">Dashboard</a>
+      <a href="#">Facturación</a>
+      <a href="#">Nota Crédito</a>
+      <a href="#">Contacto</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Reportes</h1>
+
+    <div class="filtros">
+      <div><label>Fecha Inicio</label><input type="date"></div>
+      <div><label>Fecha Fin</label><input type="date"></div>
+      <div>
+        <label>Tipo de Documento</label>
+        <select>
+          <option value="factura">Factura</option>
+          <option value="nota_credito">Nota Crédito</option>
+        </select>
+      </div>
+      <div><label>Cliente</label><input type="text" placeholder="Nombre o NIT"></div>
+      <div><label>Valor mínimo</label><input type="number" placeholder="Ej: 100000"></div>
+      <div><label>Valor máximo</label><input type="number" placeholder="Ej: 1000000"></div>
+      <div>
+        <label>Usuario emisor</label>
+        <select>
+          <option value="">Todos</option>
+          <option value="user1">user1</option>
+          <option value="user2">user2</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="acciones">
+      <button class="btn">Buscar</button>
+      <button class="btn" onclick="exportarPDF()">Exportar PDF</button>
+      <button class="btn" onclick="exportarExcel()">Exportar Excel</button>
+    </div>
+
+    <table id="tabla-reportes">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Tipo</th>
+          <th>Consecutivo</th>
+          <th>Cliente</th>
+          <th>NIT</th>
+          <th>Fecha</th>
+          <th>Valor Total</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Factura</td>
+          <td>FV-123456</td>
+          <td>Ana Martínez</td>
+          <td>900123456</td>
+          <td>2025-04-03</td>
+          <td>440000</td>
+          <td><button class="btn" onclick="verDetalle('FV-123456')">Detalle</button></td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Nota Crédito</td>
+          <td>NC-1001</td>
+          <td>Ana Martínez</td>
+          <td>900123456</td>
+          <td>2025-04-04</td>
+          <td>120000</td>
+          <td><button class="btn" onclick="verDetalle('NC-1001')">Detalle</button></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="total">Total Facturado: $560.000</div>
+    <canvas id="graficoVentas" width="600" height="200" style="margin-top: 40px;"></canvas>
+  </main>
+
+  <!-- Modal Detalle -->
+  <div id="modalDetalle" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="cerrarModal()">&times;</span>
+      <h3>Detalle del Documento</h3>
+      <p id="contenidoDetalle">Cargando...</p>
+    </div>
+  </div>
+
+  <script src="js/reporte.js"></script>
+</body>
+</html>
